@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="form-section">
+        <div class="form-container">
+            <form  id="form">
+                <h1 class="form-heading">New here,Sign Up Here</h1>
+                <div class="box">
+                    <label for="adminName">Admin Name</label>
+                    <input type="text" autocomplete="off" name="adminName" id="adminName" placeholder="Enter Your Full Name" >
+
+                    <div class="error"></div>
+                </div>
+                <div class="box">
+                    <label for="adminEmail">Admin Email</label>
+                    <input type="email" name="adminEmail" id="adminEmail" placeholder="Enter Your Email">
+
+                    <div class="error"></div>
+                </div>
+                <div class="box">
+                    <label for="adminPassword">Password</label>
+                    <input type="password" name="adminPassword" id="adminPassword" placeholder="Enter Your password">
+                    <div class="error"></div>
+                </div>
+                <div class="box">
+                    <label for="conadminPassword">Confirm Password</label>
+                    <input type="password" name="conadminPassword" id="conadminPassword" placeholder="Confirm Your password">
+                    <div class="error"></div>
+                </div>
+                <div>
+                    <button id="submit-btn"type="button" >Sign Up</button>
+                    <button type="reset" >Reset</button>
+    
+                </div>
+                
+                <div >
+                    <a href="adminLogin.html"class="link" >Already have an account. Login</a>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="adminRegister.js"></script>
+</body>
+</html>

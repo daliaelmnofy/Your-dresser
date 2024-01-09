@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <section class="form-section">
+        <div class="form-container">
+            <h2>Profile Page</h2>
+            <button onclick="logout()" >Log Out</button>
+            <button onclick="redirectToHome()" >Home</button>
+
+
+            <hr>
+            <h3>Welcome</h3>
+            <h4>Name:
+            <script>document.write(localStorage.getItem("username"))</script>
+            </h4>
+            <h6>Your Email is:
+<script>document.write(localStorage.getItem("useremail"))</script>
+            </h6>
+        </div>
+    </section>
+</body>
+<script>
+    function logout(){
+         localStorage.removeItem("username");
+         localStorage.removeItem("useremail");
+         localStorage.removeItem("userpassword");
+         window.location.href="LOGIN.html";
+
+    }
+    function redirectToHome(){
+            // Change the URL to the desired Home page
+            window.location.href = "../index.html";
+        }
+</script>
+</html>
