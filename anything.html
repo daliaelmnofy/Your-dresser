@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        .order-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .order-details {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Admin Dashboard - Orders</h2>
+
+    <div id="ordersContainer"></div>
+
+    <script>
+        // Assume the functions from your JavaScript code are available here
+
+        // Function to display orders on the admin dashboard
+        function displayOrders() {
+            let orders = JSON.parse(localStorage.getItem('orders')) || [];
+            let ordersContainer = document.getElementById('ordersContainer');
+
+            ordersContainer.innerHTML = ''; // Clear previous content
+
+            orders.forEach(order => {
+                let orderContainer = document.createElement('div');
+                orderContainer.classList.add('order-container');
+
+                let orderIdElement = document.createElement('div');
+                orderIdElement.textContent = 'Order ID: ' + order.id;
+
+                let productsElement = document.createElement('div');
+                productsElement.textContent = 'Products: ' + JSON.stringify(order.products);
+
+                let statusElement = document.createElement('div');
+                statusElement.textContent = 'Status: ' + order.status;
+
+                orderContainer.appendChild(orderIdElement);
+                orderContainer.appendChild(productsElement);
+                orderContainer.appendChild(statusElement);
+
+                ordersContainer.appendChild(orderContainer);
+            });
+        }
+
+        // Call the displayOrders function when the page loads
+        window.onload = function() {
+            displayOrders();
+        };
+    </script>
+</body>
+</html>
